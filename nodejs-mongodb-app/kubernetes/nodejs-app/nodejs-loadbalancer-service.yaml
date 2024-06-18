@@ -1,8 +1,7 @@
-
 apiVersion: v1
 kind: Service
 metadata:
-  name: node-app
+  name: nodejs-loadbalancer
   namespace: aplicacion-unir-grupal
 spec:
   type: LoadBalancer
@@ -11,4 +10,4 @@ spec:
     targetPort: 3000
     protocol: TCP
   selector:
-    app: node-app
+    app: nodejs-app
