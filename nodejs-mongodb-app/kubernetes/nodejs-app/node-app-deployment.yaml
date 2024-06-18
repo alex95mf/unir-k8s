@@ -1,0 +1,21 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app
+  namespace: aplicacion-unir-grupal
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: node-app
+  template:
+    metadata:
+      labels:
+        app: node-app
+    spec:
+      containers:
+      - name: node-app
+        image: alex95mf/nodejs-mongodb-app:latest
+        ports:
+        - containerPort: 3000
