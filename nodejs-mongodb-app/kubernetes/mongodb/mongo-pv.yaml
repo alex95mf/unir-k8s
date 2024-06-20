@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mongo-pv
+spec:
+  capacity:
+    storage: 1Gi   # Capacidad del volumen persistente
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce   # Modo de acceso al volumen
+  hostPath:
+    path: "C:\\Alexis\\UNIR\\Proyectos\\Contenerizacion\\nodejs-mongodb-app\\kubernetes\\mongodb\\StoragePV"  # Ruta en el host donde se almacenarán los datos
